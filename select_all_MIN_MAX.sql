@@ -18,6 +18,11 @@ SELECT 	Continent,
 		MIN(LifeExpectancy) `Lowest LE`
 FROM country
 GROUP BY Continent
-ORDER BY `Lowest LE` ASC;
+ORDER BY `Lowest LE` DESC;
 
 -- BONUS: Using the above query, in a result returns NULL, replace with 30
+SELECT 	Continent,
+		COALESCE(MIN(LifeExpectancy), 30) `Lowest LE`
+FROM country
+GROUP BY Continent
+ORDER BY `Lowest LE` DESC;
