@@ -1,12 +1,7 @@
-SELECT 	CURDATE(),
-		CURRENT_DATE(),
-        CURTIME(),
-        CURRENT_TIME(),
-        NOW(),
-        CURRENT_TIMESTAMP(),
-        SYSDATE(),
-        SLEEP(5),
-        NOW(),
-        SYSDATE()
+SELECT 	customer_id,
+		rental_id,
+        inventory_id,
+        rental_date
 FROM rental
-LIMIT 1;
+WHERE customer_id = 1
+AND staff_id = 1;
