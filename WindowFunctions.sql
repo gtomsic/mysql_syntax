@@ -12,6 +12,9 @@ SELECT 	Name,
         FIRST_VALUE(LifeExpectancy) OVER(PARTITION BY Continent
 										ORDER BY LifeExpectancy DESC) AS first_val,
 		LAST_VALUE(Name) OVER(PARTITION BY Continent
-										ORDER BY LifeExpectancy DESC) AS first_val
+										ORDER BY LifeExpectancy DESC
+										RANGE BETWEEN
+													UNBOUNDED PRECEDING AND
+                                                    UNBOUNDED FOLLOWING) AS last_val
 FROM country
 ORDER BY Continent, LifeExpectancy DESC;
